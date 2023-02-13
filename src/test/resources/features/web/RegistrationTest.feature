@@ -1,0 +1,47 @@
+#language:ru
+Функционал: Регистрация.
+
+  Сценарий: Проверяется правильность работы
+  системы регистрации клиентов.
+
+    * открыть "site.url" из "config.properties"
+    * инициализация страницы "Header"
+    * на странице имеется элемент "Sign In"
+    * кликнуть на элемент "Sign In"
+    * инициализация страницы "Sign In page"
+    * на странице имеется элемент "Register Now!"
+    * кликнуть на элемент "Register Now!"
+    * инициализация страницы "new Account form"
+    * ввести в поле "User ID" значение "username" из "user.properties"
+    * ввести в поле "Password" значение "password" из "user.properties"
+    * ввести в поле "Password repeat" значение "password" из "user.properties"
+    * ввести в поле "First name" значение "firstname" из "user.properties"
+    * ввести в поле "Last name" значение "lastname" из "user.properties"
+    * ввести в поле "Email" значение "email" из "user.properties"
+    * ввести в поле "Phone" значение "phone" из "user.properties"
+    * ввести в поле "Address 1" значение "address1" из "user.properties"
+    * ввести в поле "Address 2" значение "address2" из "user.properties"
+    * ввести в поле "City" значение "city" из "user.properties"
+    * ввести в поле "State" значение "state" из "user.properties"
+    * ввести в поле "Zip" значение "zip" из "user.properties"
+    * ввести в поле "Country" значение "country" из "user.properties"
+    * ввести в выпадающем меню "Language Preference" опцию "english"
+    * ввести в выпадающем меню "Favourite Category" опцию "CATS"
+    * кликнуть на элемент "Enable MyList"
+    * кликнуть на элемент "Enable MyBanner"
+    * кликнуть на элемент "Save Button"
+    * инициализация страницы "Header"
+    * кликнуть на элемент "Sign In"
+    * инициализация страницы "Sign In page"
+    * ввести в поле "Username Bar" значение "username" из "user.properties"
+    * очистить поле "Password Bar"
+    * ввести в поле "Password Bar" значение "password" из "user.properties"
+    * кликнуть на элемент "Login Button"
+    * инициализация страницы "Header"
+    * на странице имеется элемент "My Account"
+    * кликнуть на элемент "My Account"
+    * инициализация страницы "edit Account form"
+    * поле "First name" имеет значение "Evgeniy"
+    * поле "City" имеет значение "Samara"
+
+
