@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import pages.*;
+import pages.petstoreOctoperf.BasePage;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

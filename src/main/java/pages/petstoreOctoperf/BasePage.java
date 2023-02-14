@@ -1,7 +1,8 @@
-package pages;
+package pages.petstoreOctoperf;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.AbstractPage;
 
 import java.util.Map;
 
