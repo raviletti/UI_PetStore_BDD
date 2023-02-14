@@ -5,13 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import pages.JPetStoreBasePage;
+import pages.BasePage;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /** Главное меню (блок элементов) */
-public class Header extends JPetStoreBasePage {
+public class Header extends BasePage {
     Map<String, WebElement> elements = new HashMap<>();
 
     @FindBy(xpath = "//img[@name='img_cart']")
