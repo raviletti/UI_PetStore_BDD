@@ -59,10 +59,7 @@ public class WebSteps {
 
     @То("инициализация страницы {string}")
     public void pageInit(String page) {
-        if (page.equals("BasePage")){
             basePage = new BasePage();
-        }
-       else initializedPage = basePage.init(page);
     }
 
 
