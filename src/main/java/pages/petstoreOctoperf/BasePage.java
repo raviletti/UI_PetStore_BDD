@@ -28,9 +28,12 @@ public class BasePage extends AbstractPage {
      */
     private String getXpath(String elementName){
         String str = "";
-        String substring = elementName.substring(elementName.indexOf("'") + 1, elementName.lastIndexOf("'"));
+        String substring = elementName.contains("'") ?  elementName.substring(elementName.indexOf("'") + 1, elementName.lastIndexOf("'")) : elementName;
         if(elementName.startsWith("ссылка '")){
             str = String.format(firstLink, substring);
+        }
+        else if(elementName.startsWith("ссылка с текстом '")){
+            str = String.format(linkContainsText, substring);
         }
         else if(elementName.startsWith("поле '")){
             str = String.format(firstFieldWithText, substring);
@@ -44,8 +47,11 @@ public class BasePage extends AbstractPage {
         else if(elementName.startsWith("чекбокс '")){
             str = String.format(checkbox, substring);
         }
-        else if(elementName.startsWith("кнопка корзины")){
+        else if(elementName.equals("кнопка корзины")){
             str = cartButton;
+        }
+        else if(elementName.startsWith("кнопка '")){
+            str = String.format(button, substring);
         }
 
         return str;
@@ -53,6 +59,9 @@ public class BasePage extends AbstractPage {
 
     //ссылка %s
     private String firstLink = "//a[normalize-space()='%s']";
+
+    //ссылка с текстом %s
+    private String linkContainsText = "//a[contains(@href, '%s')]";
 
     //поле %s
     private String firstFieldWithText = "//input[@value='%1$s'][not(@type='checkbox')]" +
@@ -69,7 +78,8 @@ public class BasePage extends AbstractPage {
     private String checkbox = "//*[normalize-space()='%1$s']/following::input[@type='checkbox']";
 
     //кнопка %s
-    private String button = "//input[@value='%1$s']";
+    private String button = "//input[@value='%1$s']" +
+            "|//a[normalize-space()='%1$s']";
 
     //кнопка корзины
     private String cartButton = "//*[contains(@name,'img_cart')]/ancestor::a[contains(@href,'Cart')]";
